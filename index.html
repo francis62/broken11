@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>bejeweled</title>
+  <title>broken11</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="" content="SitePoint">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
@@ -14,14 +15,31 @@
 
 </head>
 
-<body>
-    <div id="app">
-        <h1>
+<body id="body">
+  <div id="app">
+    <div class="content-wrap">
+    <div class="container has-text-centered">
+      <h1 class="has-text-white title">
         {{ message }}
-    </h1>
-        <button v-on:click="counter += 1">test</button>
-        {{ counter }}
+      </h1>
+        <div class="box b0custom-box is-centered">
+        
+          <!-- <p>{{ userBoard }}</p> -->
+
+          <ul class="">
+            <li v-for="n in userBoard">
+              <button class="has-text-black">{{ n[0] }}</button>
+              <button class="has-text-black">{{ n[1] }}</button>
+              <button class="has-text-black">{{ n[2] }}</button>
+              <button class="has-text-black">{{ n[3] }}</button>
+              <button class="has-text-black">{{ n[4] }}</button>
+
+            </li>
+          </ul>
     </div>
+  </div>
+  </div>
+</div>
 
   <script src="main.js"></script>
 </body>

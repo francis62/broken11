@@ -15,7 +15,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -41,3 +40,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+#body {
+	background-color: rgb(24, 24, 24) !important;
+	height: 100%;
+	position: relative;
+	min-height: 100vh;
+}
+
+.b0custom-box{
+	background-color: rgb(24, 24, 24) !important;
+	border: 1px solid rgb(48, 48, 48) !important;
+	min-height: 50vh !important;
+	max-width: 50vh !important;
+	margin: 0 auto;
+}
+
+.content-wrap {
+	padding-top: 6% !important;    /* Footer height */
+	
+  }
