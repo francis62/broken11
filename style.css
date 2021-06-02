@@ -50,12 +50,44 @@ table {
 .b0custom-box{
 	background-color: rgb(24, 24, 24) !important;
 	border: 1px solid rgb(48, 48, 48) !important;
-	min-height: 50vh !important;
-	max-width: 50vh !important;
+	min-height: 50.25vh !important;
+	max-width: 50.25vh !important;
+	padding: 0px !important; /* lenght x 4 */
 	margin: 0 auto;
+	
 }
 
 .content-wrap {
-	padding-top: 6% !important;    /* Footer height */
+	padding-top: 6% !important;   
 	
   }
+
+.b0borrado{
+	visibility: hidden !important;
+}
+
+.b0-mini-adding {
+	display: none !important;
+}
+.b0-board{
+	display: flex !important;
+	width: 100% !important;
+	
+	flex-wrap: wrap;
+}
+.b0-board button {
+	width: 10vh;
+	height: 10vh;
+	margin: 0 !important;
+	border: 1px solid rgb(24, 24, 24);
+	border-radius: unset;
+}
+
+.button {
+	width: 100%;
+}
+
+.b0-title {
+	padding-top: 5%;
+	color: white !important;
+}
