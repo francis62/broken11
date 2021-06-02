@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
       '#B4FFE2', // light emerald
       '#A0FF33', // lime
     ]
+  const colorsActive = '#fff'
   
   function createBoard() {
-    for (let i = 0; i < 25; i++) {  // 5 x 5
+    for (let i = 0; i < 49; i++) {  // 5 x 5
       const block = document.createElement('button')
       block.setAttribute('id', i)
       block.setAttribute('class', 'button')
@@ -22,5 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   createBoard()
+
+  let blockIsSelected
+  let colorOfSelectedBlock
+  // let setBackgroundToSelected
+
+
+  blocks.forEach(block => block.addEventListener('click', blockSelection))
+  
+
+  function blockSelection() {
+    blockIsSelected = parseInt(this.id)
+    colorOfSelectedBlock = this.style.backgroundColor
+    console.log(blockIsSelected,colorOfSelectedBlock)  // testing
+    this.style.backgroundColor = colorsActive
+  }
+
+
 })
   
