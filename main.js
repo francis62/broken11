@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   var resetId
   var savedToReset = []  // or to destroy -- sirve para destruir tambien
   var savedToDestroy = []
+  var blockColor
+  const savedColorsToShow = []
   const colors = [
       '#FF71EA', // pink rosa
       '#FFE964', // yellow amarillo
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   destroyButton.addEventListener('click', completeSelection) // completeSelection()
   let refreshButton = document.querySelector('.b0-refresh')  // refreshBoard()
   refreshButton.addEventListener('click', refreshBoard) // refreshBoard()
+  var colorOfButton = document.querySelector('.b0-color-display')
   
   function refreshBoard() {
     location.reload()
@@ -40,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createBoard()
   blocks.forEach(block => block.addEventListener('click', blockSelection))
+  blocks.forEach(block => block.addEventListener('click', showBlockColor))
   
 
   function blockSelection() {
@@ -54,31 +58,59 @@ document.addEventListener('DOMContentLoaded', () => {
     // falta agregar una tecla para completar la seleccion y que se destruyan los bloques
 
     resetId = blockIsSelected
+    blockColor = colorOfSelectedBlock
     savedToReset.push(resetId)
     savedToDestroy.push(resetId)
-    for (let index = 1; index < 6; index++) {
-      savedToReset[index] = resetId
-      savedToDestroy[index] = resetId
-    }
+    savedColorsToShow.push(blockColor)
+    // for (let index = 1; index < 6; index++) {
+    //   savedToReset[index] = resetId
+    //   savedToDestroy[index] = resetId
+    //   savedColorsToShow[index] = blockColor
+    // }
 
   }
 
    // deselect - reset function vuelven a su color original
-  function deselectionOut() {
+  function deselectionOut() { // reset button
+    
     for (let index = 0; savedToReset.length; index++) {
       const element = savedToReset[index]
     document.getElementById(element).removeAttribute('class','has-background-light button is-loading' )
-   }
     
+    savedToDestroy.pop()
+   }
+   savedToReset.pop()
   }
+  
 
-  function completeSelection() {
+  function completeSelection() { // ok button
+
     for (let index = 0; savedToDestroy.length; index++) {
       const element = savedToDestroy[index]
-      const toBeDestroyed =  document.getElementById(element)
-    toBeDestroyed.removeAttribute('class','has-background-light button is-loading' )
-    toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled' )
+      const toBeDestroyed = document.getElementById(element)
+      // toBeDestroyed.remove()
+      toBeDestroyed.removeAttribute('class','has-background-light button is-loading' )
+      toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled ')    
+      savedToReset.pop()
    }
+   savedToDestroy.pop()
+  }
+
+  
+
+  function showBlockColor() { // color button
+    let bckGrndClr = (savedColorsToShow.length) - 1
+    colorOfButton.style.backgroundColor = savedColorsToShow[bckGrndClr]
+
+    console.log('0: ', savedColorsToShow[0])
+    console.log('test: ', bckGrndClr)
+
+
+    for (let index = 0; index < savedColorsToShow.length; index++) {
+      const element = savedColorsToShow[index];
+      // console.log('showBlockColor: ', element)
+      
+    }
   }
 
 })
