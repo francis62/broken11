@@ -94,6 +94,11 @@ table {
 	letter-spacing: 0.2em;
 }
 
+.b0-destroy-queue{
+	background-color: rgb(24, 24, 24) !important;
+	
+}
+
 @media only screen and (max-height: 600px) {
 	#body {
 		background-color: rgb(24, 24, 24) !important;
