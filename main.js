@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let index = 0; savedToReset.length; index++) {
       const element = savedToReset[index]
     document.getElementById(element).removeAttribute('class','has-background-light button is-loading' )
-    delete savedToDestroy[index]
-
-   }
     
+    savedToDestroy.pop()
+   }
+   savedToReset.pop()
   }
   
 
@@ -90,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const toBeDestroyed = document.getElementById(element)
       // toBeDestroyed.remove()
       toBeDestroyed.removeAttribute('class','has-background-light button is-loading' )
-      toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled ')
-
+      toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled ')    
+      savedToReset.pop()
    }
-  
+   savedToDestroy.pop()
   }
 
   
