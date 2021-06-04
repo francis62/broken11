@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '#B4FFE2', // light emerald
       '#A0FF33', // lime lima verda
     ]
-  const colorsBright = [  // different theme 9 colors *DEFAULT*
+  var colorsBright = [  // different theme 9 colors *DEFAULT*
     'rgb(255, 133, 27)', // orange
     'rgb(240, 18, 190)', // pink
     'rgb(255, 220, 0)',  // yellow
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   outerRim.addEventListener('click', deselectionOut)
   let destroyButton = document.querySelector('.b0-destroy-ok') // completeSelection()
   destroyButton.addEventListener('click', completeSelection) // completeSelection()
-  destroyButton.addEventListener('click', randomizeKill) // completeSelection()
+  // destroyButton.addEventListener('click', randomizeKill) // completeSelection()
   let refreshButton = document.querySelector('.b0-refresh')  // refreshBoard()
   refreshButton.addEventListener('click', refreshBoard) // refreshBoard()
   var colorOfButton = document.querySelector('.b0-color-display')
@@ -77,24 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
       block.setAttribute('id', i)
       block.setAttribute('class', 'button')
       block.setAttribute('class', 'target')
-      randomizeKill()
       let colorLoad = Math.floor(Math.random() * colorsBright.length)  // Theme
       block.style.backgroundColor = colorsBright[colorLoad]  // Theme
       userBoard.appendChild(block)
       blocks.push(block)
+      
     }
   }
+  
+
+ 
+  
 
   function randomizeKill() {
-      let colorLoadKill = Math.floor(Math.random() * colorsBright.length)  // Kill
-      let passToKill = colorLoadKill
+      
+      var colorLoadKill = Math.floor(Math.random() * colorsBright.length)  // Kill
+      var passToKill = colorLoadKill
+      var search = colorsBright[passToKill]
+      // passToKillString = content.toString()
       killColor.style.backgroundColor = colorsBright[passToKill]
+     colorsBright.indexOf(search) !== -1 && colorsBright.splice(colorsBright.indexOf(search), 1)
+     
+    
   }
+  
 
   createBoard()
   blocks.forEach(block => block.addEventListener('click', blockSelection))
   blocks.forEach(block => block.addEventListener('click', showBlockColor))
-  
+  randomizeKill()
   
   function scanBoard() {
     
@@ -197,7 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   function completeSelection() { // ok button
-  
+    randomizeKill()
+   
 
     for (let index = 0; savedToDestroy.length; index++) {
       const element = savedToDestroy[index]
