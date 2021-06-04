@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var navyQuantity = [0]
       var totalNavies = [0]
     var redQuantity = [0]
-      var totalreds = [0]
+      var totalrReds = [0]
   var blockColor
   const savedColorsToShow = []
   const colors = [ // original
@@ -59,9 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
   outerRim.addEventListener('click', deselectionOut)
   let destroyButton = document.querySelector('.b0-destroy-ok') // completeSelection()
   destroyButton.addEventListener('click', completeSelection) // completeSelection()
+  destroyButton.addEventListener('click', randomizeKill) // completeSelection()
   let refreshButton = document.querySelector('.b0-refresh')  // refreshBoard()
   refreshButton.addEventListener('click', refreshBoard) // refreshBoard()
   var colorOfButton = document.querySelector('.b0-color-display')
+  var killColor = document.querySelector('.b0-color-kill')
+  
   
   function refreshBoard() {
     location.reload()
@@ -74,11 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
       block.setAttribute('id', i)
       block.setAttribute('class', 'button')
       block.setAttribute('class', 'target')
+      randomizeKill()
       let colorLoad = Math.floor(Math.random() * colorsBright.length)  // Theme
       block.style.backgroundColor = colorsBright[colorLoad]  // Theme
       userBoard.appendChild(block)
       blocks.push(block)
     }
+  }
+
+  function randomizeKill() {
+      let colorLoadKill = Math.floor(Math.random() * colorsBright.length)  // Kill
+      let passToKill = colorLoadKill
+      killColor.style.backgroundColor = colorsBright[passToKill]
   }
 
   createBoard()

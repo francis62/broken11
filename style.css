@@ -67,6 +67,23 @@ table {
 	visibility: hidden !important;
 }
 
+.b0-top-bar {
+	width: 92%;
+	display: block;
+	margin: 0 auto;
+}
+.b0-top-bar button {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border: 0;
+}
+
+.b0-color-kill {
+	color: white;
+}
+
 .b0-mini-adding {
 	display: none !important;
 }
@@ -134,3 +151,19 @@ button[disabled] {
 		border-radius: unset;
 	}
   }
+
+/* display batta para testing*/
+/*   
+@media only screen and (max-width: 1300px) {    
+	
+.b0-button {
+	width: 10% !important;
+	
+  }
+
+.b0-top-bar button{
+	width: 11.2% !important;
+}
+} */
+
+/* termina ---- display batta para testing*/
