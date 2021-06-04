@@ -2,17 +2,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const userBoard = document.querySelector('.b0-board')
   const blocks = []
   var resetId
+  const boardSize = 64    // amount of blocks 
   var savedToReset = []  // or to destroy -- sirve para destruir tambien
   var savedToDestroy = []
+  var scanResults = [0]
+    var orangeQuantity = [0]
+      var totalOranges = [0]
+    var pinkQuantity = [0]
+      var totalPinks = [0]
+    var yellowQuantity = [0]
+      var totalYellows = [0]
+    var blueQuantity = [0]
+      var totalBlues = [0]
+    var greenQuantity = [0]
+      var totalGreens = [0]
+    var maroonQuantity = [0]
+      var totalMaroons = [0]
+    var oceanQuantity = [0]
+      var totalOceans = [0]
+    var navyQuantity = [0]
+      var totalNavies = [0]
+    var redQuantity = [0]
+      var totalreds = [0]
   var blockColor
   const savedColorsToShow = []
-  const colors = [
+  const colors = [ // original
       '#FF71EA', // pink rosa
       '#FFE964', // yellow amarillo
       '#28E5FF', // bright light blue celeste
       '#B4FFE2', // light emerald
       '#A0FF33', // lime lima verda
     ]
+  const colorsBright = [  // different theme 9 colors *DEFAULT*
+    'rgb(255, 133, 27)', // orange
+    'rgb(240, 18, 190)', // pink
+    'rgb(255, 220, 0)',  // yellow
+    'rgb(57, 204, 204)', // blue
+    'rgb(1, 255, 112)', // green
+    'rgb(133, 20, 75)', // MAROON
+    'rgb(0, 116, 217)', // oceanBLUE
+    'rgb(0, 31, 63)', // navyBLUE
+    'rgb(255, 65, 54)', // RED
+  ]
+  const colorsCandy = [  // different theme
+    'OrangeRed',
+    'DeepPink',
+    'Yellow',
+    'Aqua',
+    'Chartreuse'
+  ]
+
   const colorsActive = '' // no se esta usando
   let blockIsSelected  // blockSelection()
   let colorOfSelectedBlock // blockSelection()
@@ -30,12 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function createBoard() {
-    for (let i = 0; i < 49; i++) {  // 5 x 5
+    for (let i = 0; i < boardSize; i++) { 
       const block = document.createElement('button')
       block.setAttribute('id', i)
       block.setAttribute('class', 'button')
-      let colorLoad = Math.floor(Math.random() * colors.length)
-      block.style.backgroundColor = colors[colorLoad]
+      block.setAttribute('class', 'target')
+      let colorLoad = Math.floor(Math.random() * colorsBright.length)  // Theme
+      block.style.backgroundColor = colorsBright[colorLoad]  // Theme
       userBoard.appendChild(block)
       blocks.push(block)
     }
@@ -45,6 +85,74 @@ document.addEventListener('DOMContentLoaded', () => {
   blocks.forEach(block => block.addEventListener('click', blockSelection))
   blocks.forEach(block => block.addEventListener('click', showBlockColor))
   
+  
+  function scanBoard() {
+    
+    for (let index = 0; index < boardSize; index++) {
+      const element = document.getElementById(index);
+      let toChange = element.style.backgroundColor
+      scanResults.push(toChange.toString())
+      // console.log(scanResults[index], index)
+    }
+    
+  }
+  scanBoard()
+
+  function countBlocksByColor(){
+    for (let index = 0; index < boardSize; index++) { 
+      if (scanResults[index] == 'rgb(255, 133, 27)') { // orange
+        orangeQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(240, 18, 190)') { // pink
+        pinkQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(255, 220, 0)') { // yellow
+        yellowQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(57, 204, 204)') { // blue
+        blueQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(1, 255, 112)') { // green
+        greenQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(133, 20, 75)') { // maroon
+        maroonQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(0, 116, 217)') { // ocean
+        oceanQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(0, 31, 63)') { // navy
+        navyQuantity.push(scanResults[index])
+      }
+      if (scanResults[index] == 'rgb(255, 65, 54)') { // red
+        redQuantity.push(scanResults[index])
+      }
+
+      
+    }
+    totalOranges = (orangeQuantity.length) - 1
+    totalPinks = (pinkQuantity.length) - 1
+    totalYellows = (yellowQuantity.length) - 1
+    totalBlues = (blueQuantity.length) - 1
+    totalGreens = (greenQuantity.length) - 1
+    totalMaroons = (maroonQuantity.length) - 1
+    totalOceans = (oceanQuantity.length) - 1
+    totalNavies = (navyQuantity.length) - 1
+    totalReds = (redQuantity.length) - 1
+   
+  }
+
+  countBlocksByColor()
+  // for testing
+  console.log('total oranges: ', totalOranges) // ESTA OK
+  console.log('total pinks: ', totalPinks) // ESTA OK
+  console.log('total yellows caramelows: ', totalYellows) // ESTA OK
+  console.log('total blues: ', totalBlues) // ESTA OK
+  console.log('total greens: ', totalGreens) // ESTA OK
+  console.log('total maroonFive: ', totalMaroons) // ESTA OK
+  console.log('total oceans: ', totalOceans) // ESTA OK
+  console.log('total navies: ', totalNavies) // ESTA OK
+  console.log('total reds: ', totalReds) // ESTA OK
 
   function blockSelection() {
     blockIsSelected = parseInt(this.id)
@@ -62,11 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     savedToReset.push(resetId)
     savedToDestroy.push(resetId)
     savedColorsToShow.push(blockColor)
-    // for (let index = 1; index < 6; index++) {
-    //   savedToReset[index] = resetId
-    //   savedToDestroy[index] = resetId
-    //   savedColorsToShow[index] = blockColor
-    // }
 
   }
 
@@ -84,16 +187,21 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   function completeSelection() { // ok button
+  
 
     for (let index = 0; savedToDestroy.length; index++) {
       const element = savedToDestroy[index]
       const toBeDestroyed = document.getElementById(element)
       // toBeDestroyed.remove()
-      toBeDestroyed.removeAttribute('class','has-background-light button is-loading' )
-      toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled ')    
+      toBeDestroyed.removeAttribute('class','has-background-light button is-loading ' )
+      toBeDestroyed.setAttribute('class','b0-destroy-queue button is-disabled  ')   
+      toBeDestroyed.disabled = true   
       savedToReset.pop()
+     
+      
    }
    savedToDestroy.pop()
+
   }
 
   
@@ -101,11 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function showBlockColor() { // color button
     let bckGrndClr = (savedColorsToShow.length) - 1
     colorOfButton.style.backgroundColor = savedColorsToShow[bckGrndClr]
-
-    console.log('0: ', savedColorsToShow[0])
-    console.log('test: ', bckGrndClr)
-
-
+  
     for (let index = 0; index < savedColorsToShow.length; index++) {
       const element = savedColorsToShow[index];
       // console.log('showBlockColor: ', element)

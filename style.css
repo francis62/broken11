@@ -50,10 +50,11 @@ table {
 .b0custom-box{
 	background-color: rgb(24, 24, 24) !important;
 	border: 1px solid rgb(48, 48, 48) !important;
-	min-height: 70.25vh !important;
-	max-width: 70.25vh !important;
+	min-height: 64.25vh !important;
+	max-width: 64.25vh !important;
 	padding: 0px !important; /* lenght x 4 */
 	margin: 0 auto;
+	
 	
 }
 
@@ -76,8 +77,8 @@ table {
 	flex-wrap: wrap;
 }
 .b0-board button {
-	width: 10vh;
-	height: 10vh;
+	width: 8vh;
+	height: 8vh;
 	margin: 0 !important;
 	border: 1px solid rgb(24, 24, 24);
 	border-radius: unset;
@@ -96,29 +97,38 @@ table {
 
 .b0-destroy-queue{
 	background-color: rgb(24, 24, 24) !important;
-	
+}
+.b0-color-display {
+	color: white;
+}
+button[disabled] {
+	border: none;
 }
 
+.b0-button {
+	width: 8%;
+	bottom: 10px;
+}
 
 @media only screen and (max-height: 700px) {
 	#body {
 		background-color: rgb(24, 24, 24) !important;
 		height: 100%;
 		position: relative;
-		min-height: 280vh;
+		min-height: 160vh;
 	}
 	.b0custom-box{
 		background-color: rgb(24, 24, 24) !important;
 		border: 1px solid rgb(48, 48, 48) !important;
-		min-height: 140.9vh !important;
-		max-width: 140.9vh !important;
+		min-height: 80.9vh !important;
+		max-width: 80.9vh !important;
 		padding: 0px !important; /* lenght x 4 */
 		margin: 0 auto;
 		
 	}
 	.b0-board button {
-		width: 20vh;
-		height: 20vh;
+		width: 10vh;
+		height: 10vh;
 		margin: 0 !important;
 		border: 1px solid rgb(24, 24, 24);
 		border-radius: unset;
