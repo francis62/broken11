@@ -67,10 +67,20 @@ table {
 	visibility: hidden !important;
 }
 
+.b0-block-and-board {
+	float: left;
+	margin-left: 10%;
+	margin-right: 0;
+}
+.b0-console {
+	padding-top: 20vh;
+	float: right;
+}
+
 .b0-top-bar {
-	width: 92%;
+	width: 200%;
 	display: block;
-	margin: 0 auto;
+	margin: 0;
 }
 .b0-top-bar button {
 	-webkit-border-radius: 0;
@@ -142,6 +152,12 @@ button[disabled] {
 	bottom: 10px;
 }
 
+.container {
+	width: 100% !important;
+	margin: 0 auto !important;
+	
+}
+/* 
 @media only screen and (max-height: 700px) {
 	#body {
 		background-color: rgb(24, 24, 24) !important;
@@ -154,7 +170,7 @@ button[disabled] {
 		border: 1px solid rgb(48, 48, 48) !important;
 		min-height: 80.9vh !important;
 		max-width: 80.9vh !important;
-		padding: 0px !important; /* lenght x 4 */
+		padding: 0px !important; 
 		margin: 0 auto;
 		
 	}
@@ -165,7 +181,7 @@ button[disabled] {
 		border: 1px solid rgb(24, 24, 24);
 		border-radius: unset;
 	}
-  }
+  } */
 
 /* display batta para testing*/
 /*   
@@ -173,7 +189,7 @@ button[disabled] {
 	
 
 .b0-button {
-	width: 10% !important;
+	width: 50% !important;
 	
   }
 
@@ -192,5 +208,29 @@ button[disabled] {
 }
 
 } */
+
+pre {
+	background-color: rgb(24, 24, 24) !important;
+	display: block;
+	position: relative;
+}
+
+#log-container { 
+	overflow: auto; 
+	min-height: 72vh;
+	max-height: 72vh;
+	width: 100%;
+	float: right;
+	margin-right: 20vh;
+	margin-left: 0;
+	border: 1px solid rgba(255, 255, 255, 0.201);
+ }
+
+.log-warn { color: orange }
+.log-error { color: red }
+.log-info { color: skyblue }
+.log-log { color: silver }
+
+.log-warn, .log-error { font-weight: bold; }
 
 /* termina ---- display batta para testing*/

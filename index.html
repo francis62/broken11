@@ -17,10 +17,7 @@
   <meta name="theme-color" content="#ffffff">
   <script src="https://kit.fontawesome.com/a98dce3858.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="style.css">
   <script src="main.js"></script>
   <!-- vue -->
@@ -29,25 +26,36 @@
 </head>
 
 <body id="body">
-  
-  <div class="container is-centered has-text-centered">
-   
-    <!-- <img src="broken11.png" style="width: 30%;"/> -->
-    <div class="b0-top-bar">
-    <h1 class="title b0-title">broken<span style="font-weight: 300;">11</span></h1>
-    
-    <button class="button is-centered b0-color-kill b0-button">do: </button>
-    <button class="button is-centered b0-color-display b0-button">last:</button>
-    <button class="button b0-refresh is-centered is-dark b0-button"><i class="fas fa-sync-alt"></i></button>
-    <button class="button b0-outer-rim is-centered is-dark b0-button "><i class="fas fa-times"></i></button>
-    <button class="button b0-destroy-ok is-centered is-dark b0-button" ><strong>break</strong></button>
-    <button class="button b0-hp-heart is-centered is-dark b0-button"><i class="icon fas fa-heart"></i></button>
-  </div>
-    <!-- board -->
-  <div class="b0-board b0custom-box animate__animated animate__fadeIn"></div>
 
-  
-</div>
+
+  <div class="container">
+
+    <div class="b0-console">
+      <div id="log-container">
+        <pre id="log"></pre>
+      </div>
+    </div>
+
+    <!-- <img src="broken11.png" style="width: 30%;"/> -->
+    <div class="b0-block-and-board">
+      <div class="b0-top-bar">
+        <h1 class="title b0-title">broken<span style="font-weight: 300;">11</span></h1>
+
+        <button class="button is-centered b0-color-kill b0-button">do: </button>
+        <button class="button is-centered b0-color-display b0-button">last:</button>
+        <button class="button b0-refresh is-centered is-dark b0-button"><i class="fas fa-sync-alt"></i></button>
+        <button class="button b0-outer-rim is-centered is-dark b0-button "><i class="fas fa-times"></i></button>
+        <button class="button b0-destroy-ok is-centered is-dark b0-button"><strong>break</strong></button>
+        <button class="button b0-hp-heart is-centered is-dark b0-button"><i class="icon fas fa-heart"></i></button>
+      </div>
+      <!-- board -->
+      <div class="b0-board b0custom-box animate__animated animate__fadeIn"></div>
+
+    </div>
+  </div>
+ 
+
+  <script src="console.js"></script>
 </body>
 
 </html>

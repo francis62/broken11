@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const userBoard = document.querySelector('.b0-board')
   const blocks = []
-  var hp = 3
+  var hp = 40
   var resetId
   var match
   var gameOver
@@ -275,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
     }
   }
+
 
 })
   
