@@ -50,8 +50,8 @@ table {
 .b0custom-box{
 	background-color: rgb(24, 24, 24) !important;
 	border: 1px solid rgb(48, 48, 48) !important;
-	min-height: 64.25vh !important;
-	max-width: 64.25vh !important;
+	min-height: 72.25vh !important;
+	max-width: 72.25vh !important;
 	padding: 0px !important; /* lenght x 4 */
 	margin: 0 auto;
 	
@@ -79,6 +79,9 @@ table {
 	border-radius: 0;
 	border: 0;
 }
+.b0-top-bar .b0-outer-rim {
+	width: 5% !important;
+}
 
 .b0-color-kill {
 	color: white;
@@ -94,7 +97,7 @@ table {
 	flex-wrap: wrap;
 }
 .b0-board button {
-	width: 8vh;
+	width: 8vh; /* block  */
 	height: 8vh;
 	margin: 0 !important;
 	border: 1px solid rgb(24, 24, 24);
@@ -117,6 +120,18 @@ table {
 }
 .b0-color-display {
 	color: white;
+	width: 5% !important;
+}
+.b0-refresh {
+	width: 5% !important;
+}
+
+.b0-hp-heart {
+	background-color: rgb(24, 24, 24)  !important;
+}
+
+.b0-hp-heart i {
+	color: red !important;
 }
 button[disabled] {
 	border: none;
@@ -153,9 +168,10 @@ button[disabled] {
   }
 
 /* display batta para testing*/
-  
-/* @media only screen and (max-width: 1300px) {    
+/*   
+@media only screen and (max-width: 1300px) {    
 	
+
 .b0-button {
 	width: 10% !important;
 	
@@ -164,6 +180,17 @@ button[disabled] {
 .b0-top-bar button{
 	width: 11.2% !important;
 }
+.b0-top-bar .b0-outer-rim {
+	width: 5% !important;
+}
+.b0-top-bar .b0-color-display {
+	color: white;
+	width: 5% !important;
+}
+.b0-top-bar .b0-refresh {
+	width: 5% !important;
+}
+
 } */
 
 /* termina ---- display batta para testing*/

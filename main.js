@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const userBoard = document.querySelector('.b0-board')
   const blocks = []
+  var hp = 3
   var resetId
   var match
   var gameOver
   var randomMatch
-  const boardSize = 64    // amount of blocks 
+  const boardSize = 81    // amount of blocks 
   var savedToReset = []  // or to destroy -- sirve para destruir tambien
   var savedToDestroy = []
   var scanResults = [0]
@@ -46,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     'rgb(0, 116, 217)', // oceanBLUE
     'rgb(0, 31, 63)', // navyBLUE
     'rgb(255, 65, 54)', // RED
+    'rgb(252, 3, 102)', // punchMagenta
+    'rgb(255, 233, 100)', // yellowPastel
+    'rgb(160, 255, 51)', // limePastel
+    // 'rgb(177, 13, 201)', //purplePastel
+    // 'rgb(46, 204, 64)', // darkGreenPastel
   ]
   const colorsCandy = [  // different theme
     'OrangeRed',
@@ -252,8 +258,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (rule) {
       console.log('OK')
     } else {
-      console.log('GAME OVER')
+      hp -= 1
+      console.log('miss!! HP: ', hp)
+      
       gameOver = rule
+      if (hp == 0) {
+      alert('Game Over')
+      location.reload()
+      }
     }
     
 
