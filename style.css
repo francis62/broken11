@@ -41,6 +41,7 @@ table {
 	border-spacing: 0;
 }
 #body {
+	
 	background-color: rgb(24, 24, 24) !important;
 	height: 100%;
 	position: relative;
@@ -142,10 +143,16 @@ table {
 
 .b0-hp-heart {
 	background-color: rgb(24, 24, 24)  !important;
+	padding-left: 30px;
+	padding-right: 25px;
 }
 
 .b0-hp-heart i {
 	color: red !important;
+}
+.b0-life {
+	font-weight: bold;
+	padding-left: 5px;
 }
 button[disabled] {
 	border: none;

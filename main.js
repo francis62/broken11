@@ -71,8 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // destroyButton.addEventListener('click', randomizeKill) // completeSelection()
   let refreshButton = document.querySelector('.b0-refresh')  // refreshBoard()
   refreshButton.addEventListener('click', refreshBoard) // refreshBoard()
-  var colorOfButton = document.querySelector('.b0-color-display')
+  var colorOfButton = document.querySelector('.b0-color-display') // show color clicked
   var killColor = document.querySelector('.b0-color-kill')
+  var hpSpan = document.querySelector('.b0-life')
+
   
   
   function refreshBoard() {
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function createBoard() {
+    
     for (let i = 0; i < boardSize; i++) { 
       const block = document.createElement('button')
       block.setAttribute('id', i)
@@ -103,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   
-        
+  hpSpan.innerHTML = hp
   
  
   
 
   function randomizeKill() {
-      
+   
       var colorLoadKill = Math.floor(Math.random() * colorsBright.length)  // Kill
       var passToKill = colorLoadKill
       var search = colorsBright[passToKill]
@@ -254,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   function showBlockColor() { // color button
+
     let bckGrndClr = (savedColorsToShow.length) - 1
     colorOfButton.style.backgroundColor = savedColorsToShow[bckGrndClr]
     match = savedColorsToShow[bckGrndClr]
@@ -271,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       location.reload()
       }
     }
+    hpSpan.innerHTML = hp
     
 
     for (let index = 0; index < savedColorsToShow.length; index++) {
