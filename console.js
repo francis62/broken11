@@ -9,6 +9,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
     fixLoggingFunc('warn');
     fixLoggingFunc('error');
     fixLoggingFunc('info');
+    fixLoggingFunc('ok');
 
     function fixLoggingFunc(name) {
         console['old' + name] = console[name];

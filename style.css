@@ -69,16 +69,15 @@ table {
 
 .b0-block-and-board {
 	float: left;
-	margin-left: 10%;
+	margin-left: 1%;
 	margin-right: 0;
 }
 .b0-console {
-	padding-top: 20vh;
+	padding-top: 16vh;
 	float: right;
 }
 
 .b0-top-bar {
-	width: 200%;
 	display: block;
 	margin: 0;
 }
@@ -90,11 +89,12 @@ table {
 	border: 0;
 }
 .b0-top-bar .b0-outer-rim {
-	width: 5% !important;
+	width: 10% !important;
 }
 
 .b0-color-kill {
 	color: white;
+	width: 15% !important;
 }
 
 .b0-mini-adding {
@@ -128,12 +128,16 @@ table {
 .b0-destroy-queue{
 	background-color: rgb(24, 24, 24) !important;
 }
+
+.b0-destroy-ok {
+	width: 15% !important;
+}
 .b0-color-display {
 	color: white;
-	width: 5% !important;
+	width: 10% !important;
 }
 .b0-refresh {
-	width: 5% !important;
+	width: 10% !important;
 }
 
 .b0-hp-heart {
@@ -153,11 +157,11 @@ button[disabled] {
 }
 
 .container {
-	width: 100% !important;
+	width: 80% !important;
 	margin: 0 auto !important;
 	
 }
-/* 
+
 @media only screen and (max-height: 700px) {
 	#body {
 		background-color: rgb(24, 24, 24) !important;
@@ -181,33 +185,10 @@ button[disabled] {
 		border: 1px solid rgb(24, 24, 24);
 		border-radius: unset;
 	}
-  } */
-
-/* display batta para testing*/
-/*   
-@media only screen and (max-width: 1300px) {    
-	
-
-.b0-button {
-	width: 50% !important;
-	
   }
 
-.b0-top-bar button{
-	width: 11.2% !important;
-}
-.b0-top-bar .b0-outer-rim {
-	width: 5% !important;
-}
-.b0-top-bar .b0-color-display {
-	color: white;
-	width: 5% !important;
-}
-.b0-top-bar .b0-refresh {
-	width: 5% !important;
-}
 
-} */
+
 
 pre {
 	background-color: rgb(24, 24, 24) !important;
@@ -215,22 +196,42 @@ pre {
 	position: relative;
 }
 
+
+
+
+
+
 #log-container { 
 	overflow: auto; 
+	border: 1px solid rgba(255, 255, 255, 0.201);
+	padding: 5px;
+	width: 100%;
+	max-width: 40vh;
+	min-width: 40vh;
 	min-height: 72vh;
 	max-height: 72vh;
-	width: 100%;
-	float: right;
-	margin-right: 20vh;
-	margin-left: 0;
-	border: 1px solid rgba(255, 255, 255, 0.201);
+	
  }
+
+ /* #log {
+	
+ } */
+
+
+ @media only screen and (max-width: 600px){
+
+	
+	
+	
+		
+	
+	}
 
 .log-warn { color: orange }
 .log-error { color: red }
 .log-info { color: skyblue }
 .log-log { color: silver }
+.log-ok {color: rgb(1, 255, 112) }
+
 
 .log-warn, .log-error { font-weight: bold; }
-
-/* termina ---- display batta para testing*/

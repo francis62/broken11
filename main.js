@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const userBoard = document.querySelector('.b0-board')
   const blocks = []
-  var hp = 40
+  var hp = 10
   var resetId
   var match
   var gameOver
@@ -186,20 +186,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   countBlocksByColor()
   // for testing
-  console.log('total oranges: ', totalOranges) // ESTA OK
-  console.log('total pinks: ', totalPinks) // ESTA OK
-  console.log('total yellows caramelows: ', totalYellows) // ESTA OK
-  console.log('total blues: ', totalBlues) // ESTA OK
-  console.log('total greens: ', totalGreens) // ESTA OK
-  console.log('total maroonFive: ', totalMaroons) // ESTA OK
-  console.log('total oceans: ', totalOceans) // ESTA OK
-  console.log('total navies: ', totalNavies) // ESTA OK
-  console.log('total reds: ', totalReds) // ESTA OK
+  // console.log('total oranges: ', totalOranges) // ESTA OK
+  // console.log('total pinks: ', totalPinks) // ESTA OK
+  // console.log('total yellows caramelows: ', totalYellows) // ESTA OK
+  // console.log('total blues: ', totalBlues) // ESTA OK
+  // console.log('total greens: ', totalGreens) // ESTA OK
+  // console.log('total maroonFive: ', totalMaroons) // ESTA OK
+  // console.log('total oceans: ', totalOceans) // ESTA OK
+  // console.log('total navies: ', totalNavies) // ESTA OK
+  // console.log('total reds: ', totalReds) // ESTA OK
+
+  console.log('broken11 started')
+  console.log('current hp: 10')
+  console.log('colors: ', colorsBright.length, 'blocks: ', boardSize)
 
   function blockSelection() {
     blockIsSelected = parseInt(this.id)
     colorOfSelectedBlock = this.style.backgroundColor
-    console.log(blockIsSelected,colorOfSelectedBlock)  // testing
+    console.log('id:', blockIsSelected, 'bc: ', colorOfSelectedBlock)  // testing
     this.removeAttribute('class','b0-destroy-queue is-disabled' )
     this.setAttribute('class', 'has-background-light button is-loading' )
     
@@ -217,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    // deselect - reset function vuelven a su color original
   function deselectionOut() { // reset button
-    
+    console.log('canceled')
     for (let index = 0; savedToReset.length; index++) {
       const element = savedToReset[index]
     document.getElementById(element).removeAttribute('class','has-background-light button is-loading' )
@@ -230,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function completeSelection() { // ok button
     randomizeKill()
-   
+    console.warn('blocks broken!')
 
     for (let index = 0; savedToDestroy.length; index++) {
       const element = savedToDestroy[index]
@@ -256,10 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
     var rule = Boolean(match == randomMatch)
 
     if (rule) {
-      console.log('OK')
+      console.ok('selection: OK, color matched')
     } else {
       hp -= 1
-      console.log('miss!! HP: ', hp)
+      console.error('miss!! HP: ', hp, ' cancel selection [x]')
       
       gameOver = rule
       if (hp == 0) {
