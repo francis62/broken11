@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const userBoard = document.querySelector('.b0-board')
   const blocks = []
   var resetId
+  var match
+  var gameOver
+  var randomMatch
   const boardSize = 64    // amount of blocks 
   var savedToReset = []  // or to destroy -- sirve para destruir tambien
   var savedToDestroy = []
@@ -84,8 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
       
     }
   }
-  
 
+  function deleteBoard() {
+
+    if (gameOver) {
+
+    }
+
+  }
+  
+  
+        
+  
  
   
 
@@ -94,8 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
       var colorLoadKill = Math.floor(Math.random() * colorsBright.length)  // Kill
       var passToKill = colorLoadKill
       var search = colorsBright[passToKill]
+      randomMatch = search
       // passToKillString = content.toString()
       killColor.style.backgroundColor = colorsBright[passToKill]
+      //deletes color to stop function to show already shown color on call
      colorsBright.indexOf(search) !== -1 && colorsBright.splice(colorsBright.indexOf(search), 1)
      
     
@@ -231,7 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function showBlockColor() { // color button
     let bckGrndClr = (savedColorsToShow.length) - 1
     colorOfButton.style.backgroundColor = savedColorsToShow[bckGrndClr]
-  
+    match = savedColorsToShow[bckGrndClr]
+    var rule = Boolean(match == randomMatch)
+
+    if (rule) {
+      console.log('OK')
+    } else {
+      console.log('GAME OVER')
+      gameOver = rule
+    }
+    
+
     for (let index = 0; index < savedColorsToShow.length; index++) {
       const element = savedColorsToShow[index];
       // console.log('showBlockColor: ', element)
