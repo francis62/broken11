@@ -67,10 +67,19 @@ table {
 	visibility: hidden !important;
 }
 
+.b0-block-and-board {
+	float: left;
+	margin-left: 1%;
+	margin-right: 0;
+}
+.b0-console {
+	padding-top: 16vh;
+	float: right;
+}
+
 .b0-top-bar {
-	width: 92%;
 	display: block;
-	margin: 0 auto;
+	margin: 0;
 }
 .b0-top-bar button {
 	-webkit-border-radius: 0;
@@ -80,11 +89,12 @@ table {
 	border: 0;
 }
 .b0-top-bar .b0-outer-rim {
-	width: 5% !important;
+	width: 10% !important;
 }
 
 .b0-color-kill {
 	color: white;
+	width: 15% !important;
 }
 
 .b0-mini-adding {
@@ -118,12 +128,16 @@ table {
 .b0-destroy-queue{
 	background-color: rgb(24, 24, 24) !important;
 }
+
+.b0-destroy-ok {
+	width: 15% !important;
+}
 .b0-color-display {
 	color: white;
-	width: 5% !important;
+	width: 10% !important;
 }
 .b0-refresh {
-	width: 5% !important;
+	width: 10% !important;
 }
 
 .b0-hp-heart {
@@ -142,6 +156,12 @@ button[disabled] {
 	bottom: 10px;
 }
 
+.container {
+	width: 80% !important;
+	margin: 0 auto !important;
+	
+}
+
 @media only screen and (max-height: 700px) {
 	#body {
 		background-color: rgb(24, 24, 24) !important;
@@ -154,7 +174,7 @@ button[disabled] {
 		border: 1px solid rgb(48, 48, 48) !important;
 		min-height: 80.9vh !important;
 		max-width: 80.9vh !important;
-		padding: 0px !important; /* lenght x 4 */
+		padding: 0px !important; 
 		margin: 0 auto;
 		
 	}
@@ -167,30 +187,51 @@ button[disabled] {
 	}
   }
 
-/* display batta para testing*/
-/*   
-@media only screen and (max-width: 1300px) {    
+
+
+
+pre {
+	background-color: rgb(24, 24, 24) !important;
+	display: block;
+	position: relative;
+}
+
+
+
+
+
+
+#log-container { 
+	overflow: auto; 
+	border: 1px solid rgba(255, 255, 255, 0.201);
+	padding: 5px;
+	width: 100%;
+	max-width: 40vh;
+	min-width: 40vh;
+	min-height: 72vh;
+	max-height: 72vh;
 	
+ }
 
-.b0-button {
-	width: 10% !important;
+ /* #log {
 	
-  }
+ } */
 
-.b0-top-bar button{
-	width: 11.2% !important;
-}
-.b0-top-bar .b0-outer-rim {
-	width: 5% !important;
-}
-.b0-top-bar .b0-color-display {
-	color: white;
-	width: 5% !important;
-}
-.b0-top-bar .b0-refresh {
-	width: 5% !important;
-}
 
-} */
+ @media only screen and (max-width: 600px){
 
-/* termina ---- display batta para testing*/
+	
+	
+	
+		
+	
+	}
+
+.log-warn { color: orange }
+.log-error { color: red }
+.log-info { color: skyblue }
+.log-log { color: silver }
+.log-ok {color: rgb(1, 255, 112) }
+
+
+.log-warn, .log-error { font-weight: bold; }
