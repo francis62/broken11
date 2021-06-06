@@ -42,8 +42,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
     }
 }
 
-
+// console.info('game is active'); 
 // setInterval(() => {
-//   const method = (['log', 'debug', 'warn', 'error', 'info'][Math.floor(Math.random() * 5)]);
-//   console[method](method, 'logging something...');
-// }, 200);
+// console.log('                   game is listening')
+// }, 1200);
