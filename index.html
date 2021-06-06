@@ -19,13 +19,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+ 
   <!-- vue -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
 
 </head>
 
 <body id="body">
+
+  <audio id="audio" autostart="false" ><source src="audioPackDigital/tone1.ogg"></audio>
+  <audio id="audio-miss" autostart="false" ><source src="audioPackDigital/phaserUp1.ogg"></audio>
+  <audio id="audio-break" autostart="false" ><source src="audioPackDigital/twoTone2.ogg"></audio>
+  <audio id="audio-cancel" autostart="false" ><source src="audioPackUi/click1.ogg"></audio>
+  <audio id="audio-game-over" autostart="false" ><source src="audioPackDigital/powerUp12.ogg"></audio>
+  <audio id="audio-game-load" autostart="false" ><source src="audioPackUI/switch32.ogg"></audio>
 
 
   <div class="container">
@@ -55,8 +62,10 @@
   </div>
   
  
-
+  <script src="sounds.js"></script>
+  <script src="main.js"></script>
   <script src="console.js"></script>
+  
 </body>
 
 </html>
