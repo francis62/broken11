@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", checkVictory);
- 
+
   const userBoard = document.querySelector(".b0-board");
   const blocks = [];
   var hp = 3;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Aqua",
     "Chartreuse",
   ];
-  
+
   const colorsActive = ""; // no se esta usando
   let blockIsSelected; // blockSelection()
   let colorOfSelectedBlock; // blockSelection()
@@ -80,18 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
   var killColor = document.querySelector(".b0-color-kill");
   var hpSpan = document.querySelector(".b0-life");
   var sound = document.getElementById("audio");
-  
-  
-  
-  
+
   function refreshBoard() {
     location.reload();
   }
 
-  playSoundOfLoad()
+  playSoundOfLoad();
 
   function createBoard() {
-
     for (let i = 0; i < boardSize; i++) {
       const block = document.createElement("button");
       block.setAttribute("id", i);
@@ -108,13 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gameOver) {}
   }
 
-    
-
-
   hpSpan.innerHTML = hp;
 
   function randomizeKill() {
-
     var colorLoadKill = Math.floor(Math.random() * colorsBright.length); // Kill
     var passToKill = colorLoadKill;
     var search = colorsBright[passToKill];
@@ -124,14 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //deletes color to stop function to show already shown color on call
     colorsBright.indexOf(search) !== -1 &&
       colorsBright.splice(colorsBright.indexOf(search), 1);
-      
   }
 
   createBoard();
   blocks.forEach((block) => block.addEventListener("click", blockSelection));
   blocks.forEach((block) => block.addEventListener("click", showBlockColor));
-
-
 
   randomizeKill();
 
@@ -208,10 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // console.log('total reds: ', totalReds) // ESTA OK
 
   console.log('<strong style="color: white;">B R O K E N  1 1</strong>');
-  console.log("https://github.com/francis62/broken11");
+  console.log('https://github.com/francis62/broken11');
   console.log("beta");
   console.log("game started //////////////// [OK]");
-  console.log("current hp: ", hp);
+  console.log("CURRENT HP: ", hp);
   console.log(
     "colors: ",
     colorsBright.length,
@@ -219,9 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
     boardSize,
     "[9x9] board"
   );
-
-
-
 
   function blockSelection() {
     blockIsSelected = parseInt(this.id);
@@ -250,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // deselect - reset function vuelven a su color original
   function deselectionOut() {
     // reset button
-    playSoundOfCancel()
+    playSoundOfCancel();
     console.info("canceled");
     for (let index = 0; savedToReset.length; index++) {
       const element = savedToReset[index];
@@ -265,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function completeSelection() {
     // ok button
-    playSoundOfBreak()
+    playSoundOfBreak();
     randomizeKill();
     console.warn("blocks broken!");
 
@@ -285,7 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
       savedToReset.pop();
     }
     savedToDestroy.pop();
-
   }
 
   function showBlockColor() {
@@ -305,16 +290,19 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("miss!! HP: ", hp, " cancel selection [x]");
 
       gameOver = rule;
-      var timeOfInterval = 300
+      var timeOfInterval = 300;
 
       if (hp == 0) {
-        playSoundOfGameOver()
-        tellUser = 1
+        playSoundOfGameOver();
+        console.log("");
+        console.log(
+          '<span style="background: red; color: black; font-weight: bolder;">G A M E  O V E R ! !</span>'
+        );
+        tellUser = 1;
         setTimeout(() => {
-          alert("Game Over")
-          location.reload()
+          alert("Game Over");
+          location.reload();
         }, timeOfInterval);
-
       }
     }
     hpSpan.innerHTML = hp;
@@ -324,24 +312,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  var donesQuantity = 0
+  var donesQuantity = 0;
 
   function checkVictory() {
-    var dones = document.querySelectorAll('.b0-done')
-    donesQuantity = dones.length
-    console.log(donesQuantity)
-      if (donesQuantity == 81 && hp != 0) {
-        playSoundOfWin()
-        setTimeout(() => {
-          alert("Victory!!!!")
-          location.reload()
-        }, 300);
-      }
-
+    var dones = document.querySelectorAll(".b0-done");
+    donesQuantity = dones.length;
+    // console.log(donesQuantity)
+    if (donesQuantity == boardSize && hp != 0) {
+      playSoundOfWin();
+      console.log("");
+      console.log(
+        '<span style="background: rgb(1, 255, 112); color: black; font-weight: bolder;">V I C T O R Y ! !</span>'
+      );
+      setTimeout(() => {
+        alert("Victory!!!!");
+        location.reload();
+      }, 300);
+    }
   }
-
-  // sounds --------------
-
-
 
 });
