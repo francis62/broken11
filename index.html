@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="style.css">
- 
+
+
   <!-- vue -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
 
@@ -27,12 +28,21 @@
 
 <body id="body">
 
-  <audio id="audio" autostart="false" ><source src="audioPackDigital/tone1.ogg"></audio>
-  <audio id="audio-miss" autostart="false" ><source src="audioPackDigital/phaserUp1.ogg"></audio>
-  <audio id="audio-break" autostart="false" ><source src="audioPackDigital/twoTone2.ogg"></audio>
-  <audio id="audio-cancel" autostart="false" ><source src="audioPackUi/click1.ogg"></audio>
-  <audio id="audio-game-over" autostart="false" ><source src="audioPackDigital/powerUp12.ogg"></audio>
-  <audio id="audio-game-load" autostart="false" ><source src="audioPackUI/switch32.ogg"></audio>
+  <audio id="audio" class="b0-audio" autostart="false">
+    <source src="audioPackDigital/tone1.ogg"></audio>
+  <audio id="audio-miss" class="b0-audio" autostart="false">
+    <source src="audioPackDigital/phaserUp1.ogg"></audio>
+  <audio id="audio-break" class="b0-audio" autostart="false">
+    <source src="audioPackDigital/twoTone2.ogg"></audio>
+  <audio id="audio-cancel" class="b0-audio" autostart="false">
+    <source src="audioPackUi/click1.ogg"></audio>
+  <audio id="audio-game-over" class="b0-audio" autostart="false">
+    <source src="audioPackDigital/powerUp12.ogg"></audio>
+  <audio id="audio-game-load" class="b0-audio" autostart="false">
+    <source src="audioPackUI/switch32.ogg"></audio>
+    <audio id="audio-victory" class="b0-win" autostart="false">
+      <source src="audioPackUI/jingles_HIT04.ogg"></audio>
+
 
 
   <div class="container">
@@ -53,19 +63,20 @@
         <button class="button b0-refresh is-centered is-dark b0-button"><i class="fas fa-sync-alt"></i></button>
         <button class="button b0-outer-rim is-centered is-dark b0-button "><i class="fas fa-times"></i></button>
         <button class="button b0-destroy-ok is-centered is-dark b0-button"><strong>break</strong></button>
-        <button class="button b0-hp-heart is-centered is-dark b0-button"><i class="icon fas fa-heart"></i><span class="b0-life"></span></button>
+        <button class="button b0-hp-heart is-centered is-dark b0-button"><i class="icon fas fa-heart"></i><span
+            class="b0-life"></span></button>
       </div>
       <!-- board -->
       <div class="b0-board b0custom-box animate__animated animate__fadeIn"></div>
 
     </div>
   </div>
-  
- 
-  <script src="sounds.js"></script>
-  <script src="main.js"></script>
-  <script src="console.js"></script>
-  
+
+
+  <script type="text/javascript" src="sounds.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="console.js"></script>
+
 </body>
 
 </html>
