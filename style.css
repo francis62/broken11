@@ -1,70 +1,160 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 #body {
-	
+
 	background-color: rgb(24, 24, 24) !important;
 	height: 100%;
 	position: relative;
 	min-height: 100vh;
 }
 
-.b0custom-box{
+.b0custom-box {
 	background-color: rgb(24, 24, 24) !important;
 	border: 1px solid rgb(48, 48, 48) !important;
 	min-height: 72.25vh !important;
 	max-width: 72.25vh !important;
-	padding: 0px !important; /* lenght x 4 */
+	padding: 0px !important;
+	/* lenght x 4 */
 	margin: 0 auto;
-	
-	
+
+
 }
 
 .content-wrap {
-	padding-top: 6% !important;    /* Footer height */
-	
-  }
+	padding-top: 6% !important;
+	/* Footer height */
 
-.b0borrado{
+}
+
+.b0borrado {
 	visibility: hidden !important;
 }
 
@@ -73,6 +163,7 @@ table {
 	margin-left: 1%;
 	margin-right: 0;
 }
+
 .b0-console {
 	padding-top: 16vh;
 	float: right;
@@ -82,6 +173,7 @@ table {
 	display: block;
 	margin: 0;
 }
+
 .b0-top-bar button {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -89,6 +181,7 @@ table {
 	border-radius: 0;
 	border: 0;
 }
+
 .b0-top-bar .b0-outer-rim {
 	width: 10% !important;
 }
@@ -101,14 +194,17 @@ table {
 .b0-mini-adding {
 	display: none !important;
 }
-.b0-board{
+
+.b0-board {
 	display: flex !important;
 	width: 100% !important;
-	
+
 	flex-wrap: wrap;
 }
+
 .b0-board button {
-	width: 8vh; /* block  */
+	width: 8vh;
+	/* block  */
 	height: 8vh;
 	margin: 0 !important;
 	border: 1px solid rgb(24, 24, 24);
@@ -126,23 +222,25 @@ table {
 	letter-spacing: 0.2em;
 }
 
-.b0-destroy-queue{
+.b0-destroy-queue {
 	background-color: rgb(24, 24, 24) !important;
 }
 
 .b0-destroy-ok {
 	width: 15% !important;
 }
+
 .b0-color-display {
 	color: white;
 	width: 10% !important;
 }
+
 .b0-refresh {
 	width: 10% !important;
 }
 
 .b0-hp-heart {
-	background-color: rgb(24, 24, 24)  !important;
+	background-color: rgb(24, 24, 24) !important;
 	padding-left: 30px;
 	padding-right: 25px;
 }
@@ -150,10 +248,12 @@ table {
 .b0-hp-heart i {
 	color: red !important;
 }
+
 .b0-life {
 	font-weight: bold;
 	padding-left: 5px;
 }
+
 button[disabled] {
 	border: none;
 }
@@ -166,7 +266,7 @@ button[disabled] {
 .container {
 	width: 80% !important;
 	margin: 0 auto !important;
-	
+
 }
 
 @media only screen and (max-height: 700px) {
@@ -176,15 +276,17 @@ button[disabled] {
 		position: relative;
 		min-height: 160vh;
 	}
-	.b0custom-box{
+
+	.b0custom-box {
 		background-color: rgb(24, 24, 24) !important;
 		border: 1px solid rgb(48, 48, 48) !important;
 		min-height: 80.9vh !important;
 		max-width: 80.9vh !important;
-		padding: 0px !important; 
+		padding: 0px !important;
 		margin: 0 auto;
-		
+
 	}
+
 	.b0-board button {
 		width: 10vh;
 		height: 10vh;
@@ -192,7 +294,7 @@ button[disabled] {
 		border: 1px solid rgb(24, 24, 24);
 		border-radius: unset;
 	}
-  }
+}
 
 
 
@@ -208,8 +310,8 @@ pre {
 
 
 
-#log-container { 
-	overflow: auto; 
+#log-container {
+	overflow: auto;
 	border: 1px solid rgba(255, 255, 255, 0.201);
 	padding: 5px;
 	width: 100%;
@@ -217,28 +319,38 @@ pre {
 	min-width: 40vh;
 	min-height: 72vh;
 	max-height: 72vh;
-	
- }
 
- /* #log {
+}
+
+/* #log {
 	
  } */
 
 
- @media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {}
 
-	
-	
-	
-		
-	
-	}
+.log-warn {
+	color: orange
+}
 
-.log-warn { color: orange }
-.log-error { color: red }
-.log-info { color: skyblue }
-.log-log { color: silver }
-.log-ok {color: rgb(1, 255, 112) }
+.log-error {
+	color: red
+}
+
+.log-info {
+	color: skyblue
+}
+
+.log-log {
+	color: silver
+}
+
+.log-ok {
+	color: rgb(1, 255, 112)
+}
 
 
-.log-warn, .log-error { font-weight: bold; }
+.log-warn,
+.log-error {
+	font-weight: bold;
+}

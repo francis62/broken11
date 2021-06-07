@@ -1,5 +1,4 @@
-
-  rewireLoggingToElement(
+rewireLoggingToElement(
     () => document.getElementById("log"),
     () => document.getElementById("log-container"), true);
 
@@ -13,7 +12,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
 
     function fixLoggingFunc(name) {
         console['old' + name] = console[name];
-        console[name] = function(...arguments) {
+        console[name] = function (...arguments) {
             const output = produceOutput(name, arguments);
             const eleLog = eleLocator();
 
@@ -36,7 +35,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
         return args.reduce((output, arg) => {
             return output +
                 "<span class=\"log-" + (typeof arg) + " log-" + name + "\">" +
-                    (typeof arg === "object" && (JSON || {}).stringify ? JSON.stringify(arg) : arg) +
+                (typeof arg === "object" && (JSON || {}).stringify ? JSON.stringify(arg) : arg) +
                 "</span>&nbsp;";
         }, '');
     }
