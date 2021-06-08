@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", checkVictory);
-
   const userBoard = document.querySelector(".b0-board");
+  const boardSize = 81; // amount of blocks
   const blocks = [];
   var hp = 3;
   var resetId;
   var match;
-  var gameOver;
   var randomMatch;
-  const boardSize = 81; // amount of blocks
   var savedToReset = []; // or to destroy -- sirve para destruir tambien
   var savedToDestroy = [];
   var scanResults = [0];
@@ -32,16 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   var totalrReds = [0];
   var blockColor;
   const savedColorsToShow = [];
-  const colors = [
-    // original
-    "#FF71EA", // pink rosa
-    "#FFE964", // yellow amarillo
-    "#28E5FF", // bright light blue celeste
-    "#B4FFE2", // light emerald
-    "#A0FF33", // lime lima verda
-  ];
   var colorsBright = [
-    // different theme 9 colors *DEFAULT*
+    // 11 colors *DEFAULT*
     "rgb(255, 133, 27)", // orange
     "rgb(240, 18, 190)", // pink
     "rgb(255, 220, 0)", // yellow
@@ -57,29 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // 'rgb(177, 13, 201)', //purplePastel
     // 'rgb(46, 204, 64)', // darkGreenPastel
   ];
-  const colorsCandy = [
-    // different theme
-    "OrangeRed",
-    "DeepPink",
-    "Yellow",
-    "Aqua",
-    "Chartreuse",
-  ];
-
-  const colorsActive = ""; // no se esta usando
+  const timeOfInterval = 300;
   let blockIsSelected; // blockSelection()
   let colorOfSelectedBlock; // blockSelection()
   let outerRim = document.querySelector(".b0-outer-rim"); // blockSelection() deselectionOut()
-  outerRim.addEventListener("click", deselectionOut);
   let destroyButton = document.querySelector(".b0-destroy-ok"); // completeSelection()
-  destroyButton.addEventListener("click", completeSelection); // completeSelection()
-  // destroyButton.addEventListener('click', randomizeKill) // completeSelection()
   let refreshButton = document.querySelector(".b0-refresh"); // refreshBoard()
-  refreshButton.addEventListener("click", refreshBoard); // refreshBoard()
   var colorOfButton = document.querySelector(".b0-color-display"); // show color clicked
   var killColor = document.querySelector(".b0-color-kill");
   var hpSpan = document.querySelector(".b0-life");
-  var sound = document.getElementById("audio");
+
+  outerRim.addEventListener("click", deselectionOut);
+  destroyButton.addEventListener("click", completeSelection); // completeSelection()
+  // destroyButton.addEventListener("keypress", randomizeKill); // completeSelection()
+  refreshButton.addEventListener("click", refreshBoard); // refreshBoard()
 
   function refreshBoard() {
     location.reload();
@@ -100,10 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function deleteBoard() {
-    if (gameOver) {}
-  }
-
   hpSpan.innerHTML = hp;
 
   function randomizeKill() {
@@ -111,9 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var passToKill = colorLoadKill;
     var search = colorsBright[passToKill];
     randomMatch = search;
-    // passToKillString = content.toString()
     killColor.style.backgroundColor = colorsBright[passToKill];
-    //deletes color to stop function to show already shown color on call
+    //deletes color to prevent display of an already shown color on call
     colorsBright.indexOf(search) !== -1 &&
       colorsBright.splice(colorsBright.indexOf(search), 1);
   }
@@ -129,12 +105,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const element = document.getElementById(index);
       let toChange = element.style.backgroundColor;
       scanResults.push(toChange.toString());
-      // console.log(scanResults[index], index)
     }
   }
   scanBoard();
 
   function countBlocksByColor() {
+    // function is not being used - could be useful to create scores
     for (let index = 0; index < boardSize; index++) {
       if (scanResults[index] == "rgb(255, 133, 27)") {
         // orange
@@ -197,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // console.log('total reds: ', totalReds) // ESTA OK
 
   console.log('<strong style="color: white;">B R O K E N  1 1</strong>');
-  console.log('https://github.com/francis62/broken11');
+  console.log("https://github.com/francis62/broken11");
   console.log("beta");
   console.log("game started //////////////// [OK]");
   console.log("CURRENT HP: ", hp);
@@ -221,11 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "class",
       "has-background-light button is-loading animate__animated animate__pulse"
     );
-
-    // save id to reset in case user wants, guardo en array para deselect
-    // se puede usar tambien para ver los id de bloques a destruir
-    // falta agregar una tecla para completar la seleccion y que se destruyan los bloques
-
     resetId = blockIsSelected;
     blockColor = colorOfSelectedBlock;
     savedToReset.push(resetId);
@@ -233,9 +204,8 @@ document.addEventListener("DOMContentLoaded", () => {
     savedColorsToShow.push(blockColor);
   }
 
-  // deselect - reset function vuelven a su color original
   function deselectionOut() {
-    // reset button
+    // deselect - reset button
     playSoundOfCancel();
     console.info("canceled");
     for (let index = 0; savedToReset.length; index++) {
@@ -243,22 +213,19 @@ document.addEventListener("DOMContentLoaded", () => {
       document
         .getElementById(element)
         .removeAttribute("class", "has-background-light button is-loading");
-
       savedToDestroy.pop();
     }
     savedToReset.pop();
   }
 
   function completeSelection() {
-    // ok button
+    // break button
     playSoundOfBreak();
     randomizeKill();
     console.warn("blocks broken!");
-
     for (let index = 0; savedToDestroy.length; index++) {
       const element = savedToDestroy[index];
       const toBeDestroyed = document.getElementById(element);
-      // toBeDestroyed.remove()
       toBeDestroyed.removeAttribute(
         "class",
         "has-background-light button is-loading "
@@ -274,8 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showBlockColor() {
-    // color button
-
+    // displays block background color inside button [last:]
+    // this function also checks if color is matched, hp points
+    // calls sound functions and displays console messages
     let bckGrndClr = savedColorsToShow.length - 1;
     colorOfButton.style.backgroundColor = savedColorsToShow[bckGrndClr];
     match = savedColorsToShow[bckGrndClr];
@@ -288,16 +256,10 @@ document.addEventListener("DOMContentLoaded", () => {
       playSoundOfMiss();
       hp -= 1;
       console.error("miss!! HP: ", hp, " cancel selection [x]");
-
-      gameOver = rule;
-      var timeOfInterval = 300;
-
       if (hp == 0) {
         playSoundOfGameOver();
         console.log("");
-        console.log(
-          '<span style="background: red; color: black; font-weight: bolder;">G A M E  O V E R ! !</span>'
-        );
+        console.log('<span class="game-over">G A M E  O V E R ! !</span>');
         tellUser = 1;
         setTimeout(() => {
           alert("Game Over");
@@ -306,10 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     hpSpan.innerHTML = hp;
-    for (let index = 0; index < savedColorsToShow.length; index++) {
-      const element = savedColorsToShow[index];
-      // console.log('showBlockColor: ', element)
-    }
   }
 
   var donesQuantity = 0;
@@ -317,18 +275,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkVictory() {
     var dones = document.querySelectorAll(".b0-done");
     donesQuantity = dones.length;
-    // console.log(donesQuantity)
     if (donesQuantity == boardSize && hp != 0) {
       playSoundOfWin();
       console.log("");
-      console.log(
-        '<span style="background: rgb(1, 255, 112); color: black; font-weight: bolder;">V I C T O R Y ! !</span>'
-      );
+      console.log('<span class="victory">V I C T O R Y ! !</span>');
       setTimeout(() => {
         alert("Victory!!!!");
         location.reload();
-      }, 300);
+      }, timeOfInterval);
     }
   }
-
 });

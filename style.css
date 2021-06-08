@@ -79,11 +79,11 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -98,259 +98,255 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 #body {
-
-	background-color: rgb(24, 24, 24) !important;
-	height: 100%;
-	position: relative;
-	min-height: 100vh;
+  background-color: rgb(24, 24, 24) !important;
+  height: 100%;
+  position: relative;
+  min-height: 100vh;
 }
 
 .b0custom-box {
-	background-color: rgb(24, 24, 24) !important;
-	border: 1px solid rgb(48, 48, 48) !important;
-	min-height: 72.25vh !important;
-	max-width: 72.25vh !important;
-	padding: 0px !important;
-	/* lenght x 4 */
-	margin: 0 auto;
-
-
+  background-color: rgb(24, 24, 24) !important;
+  border: 1px solid rgb(48, 48, 48) !important;
+  min-height: 72.25vh !important;
+  max-width: 72.25vh !important;
+  padding: 0px !important;
+  /* lenght x 4 */
+  margin: 0 auto;
 }
 
 .content-wrap {
-	padding-top: 6% !important;
-	/* Footer height */
-
+  padding-top: 6% !important;
+  /* Footer height */
 }
 
 .b0borrado {
-	visibility: hidden !important;
+  visibility: hidden !important;
 }
 
 .b0-block-and-board {
-	float: left;
-	margin-left: 1%;
-	margin-right: 0;
+  float: left;
+  margin-left: 1%;
+  margin-right: 0;
 }
 
 .b0-console {
-	padding-top: 16vh;
-	float: right;
+  padding-top: 16vh;
+  float: right;
 }
 
 .b0-top-bar {
-	display: block;
-	margin: 0;
+  display: block;
+  margin: 0;
 }
 
 .b0-top-bar button {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	-o-border-radius: 0;
-	border-radius: 0;
-	border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border: 0;
 }
 
 .b0-top-bar .b0-outer-rim {
-	width: 10% !important;
+  width: 10% !important;
 }
 
 .b0-color-kill {
-	color: white;
-	width: 15% !important;
+  color: white;
+  width: 15% !important;
 }
 
 .b0-mini-adding {
-	display: none !important;
+  display: none !important;
 }
 
 .b0-board {
-	display: flex !important;
-	width: 100% !important;
+  display: flex !important;
+  width: 100% !important;
 
-	flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .b0-board button {
-	width: 8vh;
-	/* block  */
-	height: 8vh;
-	margin: 0 !important;
-	border: 1px solid rgb(24, 24, 24);
-	border-radius: unset;
+  width: 8vh;
+  /* block  */
+  height: 8vh;
+  margin: 0 !important;
+  border: 1px solid rgb(24, 24, 24);
+  border-radius: unset;
 }
 
 .button {
-	width: 100%;
+  width: 100%;
 }
 
 .b0-title {
-	padding-top: 5%;
-	color: white !important;
-	font-weight: lighter;
-	letter-spacing: 0.2em;
+  padding-top: 5%;
+  color: white !important;
+  font-weight: lighter;
+  letter-spacing: 0.2em;
 }
 
 .b0-destroy-queue {
-	background-color: rgb(24, 24, 24) !important;
+  background-color: rgb(24, 24, 24) !important;
 }
 
 .b0-destroy-ok {
-	width: 15% !important;
+  width: 15% !important;
 }
 
 .b0-color-display {
-	color: white;
-	width: 10% !important;
+  color: white;
+  width: 10% !important;
 }
 
 .b0-refresh {
-	width: 10% !important;
+  width: 10% !important;
 }
 
 .b0-hp-heart {
-	background-color: rgb(24, 24, 24) !important;
-	padding-left: 30px;
-	padding-right: 25px;
+  background-color: rgb(24, 24, 24) !important;
+  padding-left: 30px;
+  padding-right: 25px;
 }
 
 .b0-hp-heart i {
-	color: red !important;
+  color: red !important;
 }
 
 .b0-life {
-	font-weight: bold;
-	padding-left: 5px;
+  font-weight: bold;
+  padding-left: 5px;
 }
 
 button[disabled] {
-	border: none;
+  border: none;
 }
 
 .b0-button {
-	width: 8%;
-	bottom: 10px;
+  width: 8%;
+  bottom: 10px;
 }
 
 .container {
-	width: 80% !important;
-	margin: 0 auto !important;
-
+  width: 80% !important;
+  margin: 0 auto !important;
 }
 
 @media only screen and (max-height: 700px) {
-	#body {
-		background-color: rgb(24, 24, 24) !important;
-		height: 100%;
-		position: relative;
-		min-height: 160vh;
-	}
+  #body {
+    background-color: rgb(24, 24, 24) !important;
+    height: 100%;
+    position: relative;
+    min-height: 160vh;
+  }
 
-	.b0custom-box {
-		background-color: rgb(24, 24, 24) !important;
-		border: 1px solid rgb(48, 48, 48) !important;
-		min-height: 80.9vh !important;
-		max-width: 80.9vh !important;
-		padding: 0px !important;
-		margin: 0 auto;
+  .b0custom-box {
+    background-color: rgb(24, 24, 24) !important;
+    border: 1px solid rgb(48, 48, 48) !important;
+    min-height: 80.9vh !important;
+    max-width: 80.9vh !important;
+    padding: 0px !important;
+    margin: 0 auto;
+  }
 
-	}
-
-	.b0-board button {
-		width: 10vh;
-		height: 10vh;
-		margin: 0 !important;
-		border: 1px solid rgb(24, 24, 24);
-		border-radius: unset;
-	}
+  .b0-board button {
+    width: 10vh;
+    height: 10vh;
+    margin: 0 !important;
+    border: 1px solid rgb(24, 24, 24);
+    border-radius: unset;
+  }
 }
-
-
-
 
 pre {
-	background-color: rgb(24, 24, 24) !important;
-	display: block;
-	position: relative;
+  background-color: rgb(24, 24, 24) !important;
+  display: block;
+  position: relative;
 }
 
-
-
-
-
-
 #log-container {
-	overflow: auto;
-	border: 1px solid rgba(255, 255, 255, 0.201);
-	padding: 5px;
-	width: 100%;
-	max-width: 40vh;
-	min-width: 40vh;
-	min-height: 72vh;
-	max-height: 72vh;
-
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.201);
+  padding: 5px;
+  width: 100%;
+  max-width: 40vh;
+  min-width: 40vh;
+  min-height: 72vh;
+  max-height: 72vh;
 }
 
 /* #log {
 	
  } */
 
-
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+}
 
 .log-warn {
-	color: orange
+  color: orange;
 }
 
 .log-error {
-	color: red
+  color: red;
 }
 
 .log-info {
-	color: skyblue
+  color: skyblue;
 }
 
 .log-log {
-	color: silver
+  color: silver;
 }
 
 .log-ok {
-	color: rgb(1, 255, 112)
+  color: rgb(1, 255, 112);
 }
 
+.victory {
+  background: rgb(1, 255, 112);
+  color: black;
+  font-weight: bolder;
+}
+
+.game-over {
+  background: red;
+  color: black;
+  font-weight: bolder;
+}
 
 .log-warn,
 .log-error {
-	font-weight: bold;
+  font-weight: bold;
 }
