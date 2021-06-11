@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     totalReds = redQuantity.length - 1;
   }
 
-  countBlocksByColor();
+  // countBlocksByColor();
   // for testing
   // console.log('total oranges: ', totalOranges) // ESTA OK
   // console.log('total pinks: ', totalPinks) // ESTA OK
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function blockSelection() {
     blockIsSelected = parseInt(this.id);
     colorOfSelectedBlock = this.style.backgroundColor;
-    console.log("id:", blockIsSelected, "bc: ", colorOfSelectedBlock); // testing
+    // console.log("id:", blockIsSelected, "bc: ", colorOfSelectedBlock); // testing
     this.removeAttribute(
       "class",
       "b0-destroy-queue is-disabled animate__animated animate__pulse"
