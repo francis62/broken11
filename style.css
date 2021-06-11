@@ -128,6 +128,54 @@ table {
   border-spacing: 0;
 }
 
+
+@media only screen and (max-width: 600px) {
+}
+
+.log-warn {
+  color: orange;
+}
+
+.log-error {
+  color: red;
+}
+
+.log-info {
+  color: skyblue;
+}
+
+.log-log {
+  color: silver;
+}
+
+.log-ok {
+  color: rgb(1, 255, 112);
+}
+
+.victory {
+  background: rgb(1, 255, 112);
+  color: black;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+.game-over {
+  background: red;
+  color: black;
+  font-weight: bolder;
+}
+
+.log-warn,
+.log-error {
+  font-weight: bold;
+}
+
+
+
 #body {
   background-color: rgb(24, 24, 24) !important;
   height: 100%;
@@ -264,31 +312,6 @@ button[disabled] {
   margin: 0 auto !important;
 }
 
-@media only screen and (max-height: 700px) {
-  #body {
-    background-color: rgb(24, 24, 24) !important;
-    height: 100%;
-    position: relative;
-    min-height: 160vh;
-  }
-
-  .b0custom-box {
-    background-color: rgb(24, 24, 24) !important;
-    border: 1px solid rgb(48, 48, 48) !important;
-    min-height: 80.9vh !important;
-    max-width: 80.9vh !important;
-    padding: 0px !important;
-    margin: 0 auto;
-  }
-
-  .b0-board button {
-    width: 10vh;
-    height: 10vh;
-    margin: 0 !important;
-    border: 1px solid rgb(24, 24, 24);
-    border-radius: unset;
-  }
-}
 
 pre {
   background-color: rgb(24, 24, 24) !important;
@@ -311,42 +334,145 @@ pre {
 	
  } */
 
-@media only screen and (max-width: 600px) {
+
+
+
+
+@media only screen and (max-height: 600px) {
+  #body {
+    background-color: rgb(24, 24, 24) !important;
+    height: 100%;
+    position: relative;
+    min-height: 150vh;
+  }
+
+  .b0custom-box {
+    background-color: rgb(24, 24, 24) !important;
+    border: 1px solid rgb(48, 48, 48) !important;
+    min-height: 90.9vh !important;
+    max-width: 90.9vh !important;
+    padding: 0px !important;
+    margin: 0 auto;
+  }
+
+  .b0-board button {
+    width: 10vh;
+    height: 10vh;
+    margin: 0 !important;
+    border: 1px solid rgb(24, 24, 24) !important;
+    border-radius: unset;
+  }
+
+
+  pre {
+    background-color: rgb(24, 24, 24) !important;
+    display: block;
+    position: relative;
+  }
+
+  #log-container {
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.201);
+    padding: 5px;
+    width: 100%;
+    max-width: 40vh;
+    min-width: 40vh;
+    min-height: 90.9vh !important;
+    max-height: 90.9vh !important;
+  }
+
+
 }
 
-.log-warn {
-  color: orange;
+
+@media only screen and (max-height: 900px) {
+  #body {
+    background-color: rgb(24, 24, 24) !important;
+    height: 100%;
+    position: relative;
+    min-height: 150vh;
+  }
+
+  .b0custom-box {
+    background-color: rgb(24, 24, 24) !important;
+    border: 1px solid rgb(48, 48, 48) !important;
+    min-height: 72.3vh !important;
+    max-width: 72.3vh !important;
+    padding: 0px !important;
+    margin: 0 auto;
+  }
+
+  .b0-board button {
+    width: 8vh;
+    height: 8vh;
+    margin: 0 !important;
+    border: 1px solid rgb(24, 24, 24) !important;
+    border-radius: unset;
+  }
+
+
+  pre {
+    background-color: rgb(24, 24, 24) !important;
+    display: block;
+    position: relative;
+  }
+
+  #log-container {
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.201);
+    padding: 5px;
+    width: 100%;
+    max-width: 40vh;
+    min-width: 40vh;
+    min-height: 72.9vh !important;
+    max-height: 72.9vh !important;
+  }
+
+
 }
 
-.log-error {
-  color: red;
+
+
+
+@media only screen and (max-height: 700px) {
+  #body {
+    background-color: rgb(24, 24, 24) !important;
+    height: 100%;
+    position: relative;
+    min-height: 150vh;
+  }
+
+  .b0custom-box {
+    min-height: 72.6vh !important;
+    max-width: 72.6vh !important;
+  }
+
+  .b0-board button {
+    width: 8vh;
+    height: 8vh;
+    margin: 0 !important;
+    border: 1px solid rgb(24, 24, 24) !important;
+    border-radius: unset;
+  }
+
+
+  pre {
+    background-color: rgb(24, 24, 24) !important;
+    display: block;
+    position: relative;
+  }
+
+  #log-container {
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.201);
+    padding: 5px;
+    width: 100%;
+    max-width: 40vh;
+    min-width: 40vh;
+    min-height: 72.9vh !important;
+    max-height: 72.9vh !important;
+  }
+
+
 }
 
-.log-info {
-  color: skyblue;
-}
-
-.log-log {
-  color: silver;
-}
-
-.log-ok {
-  color: rgb(1, 255, 112);
-}
-
-.victory {
-  background: rgb(1, 255, 112);
-  color: black;
-  font-weight: bolder;
-}
-
-.game-over {
-  background: red;
-  color: black;
-  font-weight: bolder;
-}
-
-.log-warn,
-.log-error {
-  font-weight: bold;
-}
